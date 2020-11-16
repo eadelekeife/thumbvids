@@ -65,21 +65,21 @@ app.get('/', (req, res) => {
         let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
         if (checkToken.user._id) {
             let { user } = checkToken;
-            res.render('index.ejs', { user })
+            res.render('newindex.ejs', { user })
         } else {
-            res.render('index.ejs')
+            res.render('newindex.ejs')
         }
     } else {
-        res.render('index.ejs');
+        res.render('newindex.ejs');
     }
 })
 app.get('/templates', mildMiddleware, (req, res) => {
     templates.find({})
         .then(data => {
             if (res.body) {
-                res.render('templates.ejs', { user: res.body, data })
+                res.render('template.ejs', { user: res.body, data })
             } else {
-                res.render('templates.ejs', { data })
+                res.render('template.ejs', { data })
             }
         })
         .catch(err => res.send(err))
