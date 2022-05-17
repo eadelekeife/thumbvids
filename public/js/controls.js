@@ -26,7 +26,7 @@ canvas.renderAll();
 
 canvas.backgroundColor = '#ffffff';
 const navToHide = ['defaultView', 'backgroundControls', 'effectsControls', 'textsControls', 'cinemaControls', 'shapesControls',
-  'borderControls', 'secondContact', 'foregroundControls', 'patternControls', 'uploadControls', 'brushControls'];
+  'secondContact', 'foregroundControls', 'patternControls', 'uploadControls', 'brushControls'];
 for (let hideMe of navToHide) {
   const getElement = document.getElementById(hideMe)
   getElement.classList.add('toHide')
@@ -380,18 +380,6 @@ document.getElementById('addCircle').addEventListener('click', () => {
   save()
   canvas.renderAll();
 })
-document.getElementById('addRectangle').addEventListener('click', () => {
-  let rectangle = new fabric.Rect({
-    width: 250,
-    height: 100,
-    left: 200,
-    top: 200,
-    fill: '#000'
-  });
-  canvas.add(rectangle);
-  save()
-  canvas.renderAll();
-})
 document.getElementById('addTriangle').addEventListener('click', () => {
   let triangle = new fabric.Triangle({
     left: 130,
@@ -458,20 +446,6 @@ document.getElementById('addSquareStroke').addEventListener('click', () => {
     fill: 'rgba(0,0,0,0)'
   });
   canvas.add(square);
-  save()
-  canvas.renderAll();
-})
-document.getElementById('addRectangleStroke').addEventListener('click', () => {
-  let rectangle = new fabric.Rect({
-    width: 250,
-    height: 100,
-    left: 200,
-    top: 200,
-    stroke: '#000',
-    strokeWidth: 5,
-    fill: 'rgba(0,0,0,0)'
-  });
-  canvas.add(rectangle);
   save()
   canvas.renderAll();
 })
@@ -1007,7 +981,7 @@ function changeFontFamily(event) {
 
 
 (function getFonts() {
-  var fonts = ["Josefin Slab", "Open Sans", "Poppins", "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto","Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
+  var fonts = ["Josefin Slab", "Open Sans", "Poppins", "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto", "Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
     "Sigmar One", "Architects Daughter", "Abril Fatface", "Covered By Your Grace", "Kaushan Script", "Gloria Hallelujah", "Satisfy", "Lobster Two", "Comfortaa", "Cinzel", "Courgette"];
   fonts.forEach(datum => {
 
@@ -1211,8 +1185,9 @@ document.getElementById('templates').addEventListener('submit', e => {
     body: JSON.stringify({
       message: canvasFile,
       templateName: e.target[0].value,
+      category: e.target[2].value,
       tags: tagBox,
-      description: e.target[2].value,
+      description: e.target[3].value,
       svgFile: canvas.toJSON(),
     })
   })

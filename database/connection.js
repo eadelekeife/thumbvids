@@ -9,6 +9,7 @@ let templatesSchema = new mongoose.Schema({
     name: String,
     location: String,
     description: String,
+    category: String,
     tags: Array,
     svgCode: JSON,
     date: {
@@ -63,5 +64,5 @@ module.exports = {
     users: mongoose.model('Users', usersSchema),
     templates: mongoose.model('Templates', templatesSchema),
     Designs: mongoose.model('Designs', designSchema),
-    youtube_accounts: mongoose.model('youtube_accounts', youtube_accountsSchema)
+    youtube_accounts: mongoose.model('youtube_accounts', youtube_accountsSchema),
 }

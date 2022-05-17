@@ -1,7 +1,7 @@
 const pickr = Pickr.create({
   el: '.color-picker',
   theme: 'monolith', // or 'monolith', or 'nano'
-  default: '#5f646f',
+  default: '#fff',
 
   swatches: [
       'rgba(244, 67, 54, 1)',
@@ -50,7 +50,7 @@ pickr.on('change', (color, instance) => {
 const backgroundPicker = Pickr.create({
   el: '.colorPick',
   theme: 'monolith', // or 'monolith', or 'nano'
-  default: '#5f646f',
+  default: '#fff',
 
   swatches: [
       'rgba(244, 67, 54, 1)',
@@ -93,7 +93,7 @@ backgroundPicker.on('change', (color, instance) => {
 const layerPicker = Pickr.create({
   el: '.layerPicker',
   theme: 'monolith', // or 'monolith', or 'nano'
-  default: '#5f646f',
+  default: '#fff',
 
   swatches: [
       'rgba(244, 67, 54, 1)',
@@ -139,7 +139,7 @@ layerPicker.on('change', (color, instance) => {
 const shapePicker = Pickr.create({
   el: '.shapePicker',
   theme: 'monolith', // or 'monolith', or 'nano'
-  default: '#5f646f',
+  default: '#fff',
 
   swatches: [
       'rgba(244, 67, 54, 1)',
@@ -188,7 +188,7 @@ shapePicker.on('change', (color, instance) => {
 const borderPicker = Pickr.create({
   el: '.borderPicker',
   theme: 'monolith', // or 'monolith', or 'nano'
-  default: '#5f646f',
+  default: '#fff',
 
   swatches: [
       'rgba(244, 67, 54, 1)',

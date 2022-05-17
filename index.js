@@ -65,30 +65,31 @@ app.get('/', (req, res) => {
         let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
         if (checkToken.user._id) {
             let { user } = checkToken;
-            res.render('newindex.ejs', { user })
+            res.render('homepage.ejs', { user })
         } else {
-            res.render('newindex.ejs')
+            res.render('homepage.ejs')
         }
     } else {
-        res.render('newindex.ejs');
+        res.render('homepage.ejs');
     }
 })
 app.get('/templates', mildMiddleware, (req, res) => {
     templates.find({})
         .then(data => {
             if (res.body) {
-                res.render('template.ejs', { user: res.body, data })
+                res.render('temp.ejs', { user: res.body, data })
             } else {
-                res.render('template.ejs', { data })
+                res.render('temp.ejs', { data })
             }
         })
         .catch(err => res.send(err))
 })
+
 app.get('/signin', mildMiddleware, (req, res) => {
     if (res.body) {
-        res.render('signin.ejs', { user: res.body })
+        res.render('login.ejs', { user: res.body })
     } else {
-        res.render('signin.ejs')
+        res.render('login.ejs')
     }
 })
 app.get('/signup', mildMiddleware, (req, res) => {
@@ -171,7 +172,11 @@ app.post('/signin', async (req, res) => {
         }
     }
 })
-app.get('/createTemplates', middleware, (req, res) => {
+// app.get('/createTemplates', middleware, (req, res) => {
+//     res.render('test.ejs');
+// })
+
+app.get('/createTemplates', (req, res) => {
     res.render('test.ejs');
 })
 
@@ -211,7 +216,6 @@ app.get('/templates/:tagName', mildMiddleware, async (req, res) => {
 })
 
 app.post('/saveTemplates', (req, res) => {
-
     const url = './public/templates/thumbnails/' + Date.now();
     base64Img.img(req.body.message, '', url, function (err, filepath) { });
 
@@ -222,8 +226,8 @@ app.post('/saveTemplates', (req, res) => {
         template.description = req.body.description;
         template.location = url + '.png';
         template.tags = req.body.tags;
+        template.category = req.body.category;
         template.save();
-
         res.send('Template Saved');
     } catch (err) {
         res.send(err);

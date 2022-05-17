@@ -41,25 +41,54 @@
         <div class="container">
             <div class="card">
                 <h5 class="text-center">Hi, Welcome back!</h5>
-                <% if(typeof error !== 'undefined') { %>
-                    <p class="error mt-3 text-danger text-center"><%= error %></p>
-                <% } %>
-                <form action="/signin" method="POST" class="mt-5">
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control" name="email" id="email" 
-                        value="<%= typeof email === 'undefined' ? '' : email %>" >
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
-                    </div>
-    
-                    <button class="mt-4 btn btn-prim">Sign In</button>
-                </form>
+                <% if(typeof error !=='undefined' ) { %>
+                    <p class="error mt-3 text-danger text-center">
+                        <%= error %>
+                    </p>
+                    <% } %>
+                        <form action="/signin" method="POST" class="mt-5">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    value="<%= typeof email === 'undefined' ? '' : email %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+
+                            <button class="mt-4 btn btn-prim">Sign In</button>
+                        </form>
             </div>
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('templates').addEventListener('submit', e => {
+        e.preventDefault();
+
+        // , { multiplier: 2 }
+        // https://thumbvids.herokuapp.com/saveTemplate
+        fetch('http://localhost:8080/saveTemplates', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: canvasFile,
+                templateName: e.target[0].value,
+                category: e.target[2].value,
+                tags: tagBox,
+                description: e.target[3].value,
+                svgFile: canvas.toJSON(),
+            })
+        })
+            .then(() => {
+                window.location.href = '/templates';
+            })
+            .catch(err => console.log(err))
+        // saveAs(blob, "yournewfile.png");
+    })
+</script>
 
 </html>
