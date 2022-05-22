@@ -9,8 +9,8 @@ const canvas = new fabric.Canvas("demoCanvas", {
 fabric.Object.NUM_FRACTION_DIGITS = 17;
 
 
-( function getFonts() {
-  var fonts = ["Josefin Slab", "Open Sans", "Poppins", "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto","Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
+(function getFonts() {
+  var fonts = ["Josefin Slab", "Open Sans", "Poppins", "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto", "Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
     "Sigmar One", "Architects Daughter", "Abril Fatface", "Covered By Your Grace", "Kaushan Script", "Gloria Hallelujah", "Satisfy", "Lobster Two", "Comfortaa", "Cinzel", "Courgette"];
   fonts.forEach(datum => {
 
@@ -51,8 +51,8 @@ if (typeof document.getElementById('urlData').value !== 'undefined') {
   canvas.loadFromJSON(document.getElementById('urlData').value, canvas.renderAll.bind(canvas))
 }
 canvas.backgroundColor = '#ffffff';
-const navToHide = ['defaultView', 'backgroundControls', 'effectsControls', 'textsControls', 'cinemaControls', 'shapesControls',
-  'borderControls', 'secondContact', 'foregroundControls', 'patternControls', 'uploadControls', 'brushControls'];
+const navToHide = ['defaultView', 'backgroundControls', 'effectsControls', 'textsControls', 'cinemaControls',
+  'shapesControls', 'secondContact', 'foregroundControls', 'patternControls', 'uploadControls', 'brushControls'];
 for (let hideMe of navToHide) {
   const getElement = document.getElementById(hideMe)
   getElement.classList.add('toHide')
@@ -211,12 +211,12 @@ canvas.on('selection:created', () => {
   const active = canvas.getActiveObject().get('type');
 
   let allFilters = document.querySelectorAll('.filter');
-    for(let filter of allFilters) {
-      if (active === 'image') {
+  for (let filter of allFilters) {
+    if (active === 'image') {
       filter.removeAttribute('disabled');
-      }
-      else filter.setAttribute('disabled', 'true');
     }
+    else filter.setAttribute('disabled', 'true');
+  }
 
   if (active === 'textbox') {
     textNav.showSecondContact();
@@ -229,9 +229,9 @@ canvas.on('selection:created', () => {
 canvas.on('selection:cleared', () => {
 
   let allFilters = document.querySelectorAll('.filter');
-    for(let filter of allFilters) {
-      filter.setAttribute('disabled', 'true');
-    }
+  for (let filter of allFilters) {
+    filter.setAttribute('disabled', 'true');
+  }
 
   textNav.showFirstContact();
   checkActiveImage()
@@ -240,12 +240,12 @@ canvas.on('selection:updated', () => {
   const active = canvas.getActiveObject().get('type');
 
   let allFilters = document.querySelectorAll('.filter');
-    for(let filter of allFilters) {
-      if (active === 'image') {
+  for (let filter of allFilters) {
+    if (active === 'image') {
       filter.removeAttribute('disabled');
-      }
-      else filter.setAttribute('disabled', 'true');
     }
+    else filter.setAttribute('disabled', 'true');
+  }
 
   if (active === 'textbox') {
     textNav.showSecondContact();
@@ -430,18 +430,6 @@ document.getElementById('addCircle').addEventListener('click', () => {
   save()
   canvas.renderAll();
 })
-document.getElementById('addRectangle').addEventListener('click', () => {
-  let rectangle = new fabric.Rect({
-    width: 250,
-    height: 100,
-    left: 200,
-    top: 200,
-    fill: '#000'
-  });
-  canvas.add(rectangle);
-  save()
-  canvas.renderAll();
-})
 document.getElementById('addTriangle').addEventListener('click', () => {
   let triangle = new fabric.Triangle({
     left: 130,
@@ -508,20 +496,6 @@ document.getElementById('addSquareStroke').addEventListener('click', () => {
     fill: 'rgba(0,0,0,0)'
   });
   canvas.add(square);
-  save()
-  canvas.renderAll();
-})
-document.getElementById('addRectangleStroke').addEventListener('click', () => {
-  let rectangle = new fabric.Rect({
-    width: 250,
-    height: 100,
-    left: 200,
-    top: 200,
-    stroke: '#000',
-    strokeWidth: 5,
-    fill: 'rgba(0,0,0,0)'
-  });
-  canvas.add(rectangle);
   save()
   canvas.renderAll();
 })
@@ -1231,6 +1205,8 @@ function getVideos() {
 // 
 // })
 function saveVideos() {
+  document.querySelector('.download_action_button.first_one').style.display = "none";
+  document.querySelector('.download_action_button.second_one').style.display = "block";
   let factor = 1280 / canvas.width;
   const canvasFile = canvas.toDataURL({
     format: 'png',
@@ -1245,6 +1221,38 @@ function saveVideos() {
   link.click();
 
   window.location.href = "/templates"
+}
+function saveDesignToAccount() {
+  console.log('found')
+  let factor = 1280 / canvas.width;
+  const canvasFile = canvas.toDataURL({
+    format: 'png',
+    quality: 1,
+    multiplier: factor,
+    left: 0,
+    top: 0
+  });
+  fetch('http://localhost:8080/saveThumbnailToDB', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: canvasFile,
+      svgFile: canvas.toJSON(),
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data === 'success') {
+        console.log(data)
+        window.location.pathname = '/success';
+      } else {
+        console.log(data)
+        window.location.pathname = '/';
+      }
+    })
+    .catch(err => console.log(err))
 }
 function uploadThumbnails(e) {
   document.getElementById('modalCardHeader').innerHTML = 'Select Video';
@@ -1300,8 +1308,6 @@ function uploadThumbnails(e) {
       }
     })
     .catch(err => console.log(err))
-
-
 }
 
 

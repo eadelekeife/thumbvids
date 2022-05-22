@@ -8,7 +8,7 @@
             <div class="templates">
                 <div class="templates_hero">
                     <div class="templates_hero_content">
-                        <h3>Find a design template and edit it in VistaCreate</h3>
+                        <h3>Find a design template and edit it in Thumbvids</h3>
                         <p>Professionally designed templates allow you to easily create inspirational designs for any
                             occasion. No design skills? No problem! Use VistaCreate Editor to customize any of 50,000+
                             design formats and create professional visuals in just a few clicks</p>
@@ -149,6 +149,32 @@
                                             </div>
                                         </div>
                                         <% } }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template_block_cover">
+                            <h4 class="template_block_title">All</h4>
+                            <div class="template_block_body">
+                                <div class="grid_4">
+                                    <% data.forEach(temp=> { %>
+                                        <div class="template_design">
+                                            <!-- <button type="button" data-toggle="modal" data-target="#myModal"> -->
+                                            <img data-toggle="modal" data-target="#myModal"
+                                                src="../<%= temp.location.slice(8) %>"
+                                                data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                                data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                                data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                                alt="templates">
+                                            <!-- </button> -->
+                                            <div class="tag_blocks">
+                                                <% temp.tags.forEach(tag=> { %>
+                                                    <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                            <%= tag %>
+                                                        </a></div>
+                                                    <% }) %>
+                                            </div>
+                                        </div>
+                                        <% }) %>
                                 </div>
                             </div>
                         </div>

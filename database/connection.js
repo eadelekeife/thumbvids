@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://ieadeleke:biochemistry@cluster0.yrxma.mongodb.net/funkyapp?retryWrites=true&w=majority',
-{useUnifiedTopology: true, useCreateIndex: true, useNewUrlParser: true})
-.then( () => console.log('Database connected successfully'))
-.catch(err => console.log(err))
+    { useUnifiedTopology: true, useCreateIndex: true, useNewUrlParser: true })
+    .then(() => console.log('Database connected successfully'))
+    .catch(err => console.log(err))
 
 let templatesSchema = new mongoose.Schema({
     name: String,
@@ -28,7 +28,7 @@ let usersSchema = new mongoose.Schema({
     password: String,
     designs: [{
         type: mongoose.Schema.Types.ObjectId,
-        refs: 'Designs'
+        ref: 'Designs'
     }],
     youtubeAccounts: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -38,26 +38,26 @@ let usersSchema = new mongoose.Schema({
 let designSchema = new mongoose.Schema({
     id: {
         type: String,
-      },
-      location: String,
-      svgCode: JSON,
-      user_id: {
-          type:  mongoose.Schema.Types.ObjectId,
-          refs: 'Users'
-      }
+    },
+    location: String,
+    svgCode: JSON,
+    users: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    }]
 })
 let youtube_accountsSchema = new mongoose.Schema({
     id: {
         type: String
-      },
-      name: String,
-      email: String,
-      picture: String,
-      refresh_token: String,
-      user_id: {
-          type: mongoose.Schema.Types.ObjectId,
-          refs: 'Users'
-      }
+    },
+    name: String,
+    email: String,
+    picture: String,
+    refresh_token: String,
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        refs: 'Users'
+    }
 })
 
 module.exports = {

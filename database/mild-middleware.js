@@ -1,19 +1,27 @@
 const jwt = require('jsonwebtoken');
-const { users } = require('./connection');
+const { users, Designs } = require('./connection');
 
-module.exports = function (req,res,next) {
-    if(req.session.token) {
+module.exports = function (req, res, next) {
+    if (req.session.token) {
         let verifyToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
-        if(verifyToken) {
-            users.findById(verifyToken.user._id, (err,user) => {
-                if(err) throw err;
-                if(user) {
-                    res.body = user;
-                    next();
-                } else {
-                    next();
-                }
-            })
+        if (verifyToken) {
+            users.findById(verifyToken.user._id)
+                .populate({
+                    path: 'Designs',
+                    model: Designs
+                })
+                .exec()
+                .then(user => {
+                    if (user) {
+                        res.body = user;
+                        next();
+                    } else {
+                        next();
+                    }
+                })
+                .catch(err => {
+                    throw err
+                })
         } else {
             next();
         }

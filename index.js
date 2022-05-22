@@ -228,13 +228,16 @@ app.post('/saveTemplates', (req, res) => {
         template.tags = req.body.tags;
         template.category = req.body.category;
         template.save();
+
+        users.populate({
+
+        })
         res.send('Template Saved');
     } catch (err) {
         res.send(err);
     }
 
 })
-
 
 app.get('/connectYoutube', middleware, (req, res) => {
     youtube_accounts.findOne({
@@ -599,6 +602,53 @@ app.post('/uploadThumbnail', middleware, async (req, res) => {
         })
 })
 
+app.post('/saveThumbnailToDB', middleware, async (req, res) => {
+    const currentTime = Date.now();
+    const url = './public/designs/thumbnails/' + currentTime;
+    base64Img.img(req.body.message, '', url, function (err, filepath) { });
+
+    let newDesign = new Designs();
+    newDesign.location = url + '.png';
+    newDesign.svgCode = JSON.stringify(req.body.svgFile);
+    newDesign.users = res.body.id;
+    newDesign.save()
+        .then(designUploaded => {
+            users.updateOne({
+                _id: res.body.id
+            }, {
+                $push: {
+                    designs: designUploaded._id
+                }
+            })
+                .then(data => {
+                    let successMessage = {
+                        status: 200,
+                        statusMessage: 'success',
+                        summary: 'Thumbnail saved successfully',
+                        message: data
+                    }
+                    res.json(successMessage)
+                })
+                .catch(err => {
+                    let errorMessage = {
+                        status: 400,
+                        statusMessage: 'failure',
+                        summary: 'An error occured while saving data. Please try again',
+                        message: ''
+                    }
+                    res.json(errorMessage)
+                })
+        })
+        .catch(err => {
+            let errorMessage = {
+                status: 400,
+                statusMessage: 'failure',
+                summary: 'An error occured while saving data. Please try again',
+                message: ''
+            }
+            res.json(errorMessage)
+        })
+})
 
 
 
