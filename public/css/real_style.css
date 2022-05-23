@@ -142,7 +142,7 @@ body, html {
 }
 
 .hero_section {
-    background: url('../images/homepage/desktop.png');
+    background: #F9D873;
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -185,7 +185,7 @@ body, html {
 
 .hero_section h1 {
     font-size: 28px;
-    width: 60%;
+    width: 80%;
     font-weight: 900;
     line-height: 1.3;
     margin-bottom: 5px;
@@ -309,6 +309,7 @@ body, html {
 .props_page .resize img {
     height: 2.0rem;
     width: auto;
+    margin-bottom: 5px;
 }
 
 .props_page .resize p {
@@ -354,7 +355,7 @@ body, html {
 }
 
 .props_page h1 {
-    font-size: 25px;
+    font-size: 24px;
     width: 70%;
     font-weight: 600;
 }
@@ -392,8 +393,12 @@ footer ul {
     padding: 0px;
 }
 
-footer ul li, footer p, footer h4 {
-    color: #fff;
+footer ul li, footer p {
+    color: #91949c;
+}
+
+footer h4 {
+    color: #FFF;
 }
 
 footer h4 {
@@ -428,14 +433,14 @@ footer p, footer ul li {
 }
 
 .thumbvids_props .grid_4 p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     margin-bottom: 0%;
 }
 
 .thumbvids_props h1 {
     font-size: 22px;
-    width: 60%;
+    width: 80%;
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 5px;
@@ -449,7 +454,7 @@ footer p, footer ul li {
 }
 
 .thumbvids_props h4 {
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     display: block;
     font-size: 16px;
 }
@@ -634,6 +639,10 @@ label {
     border: 1px solid #DCE0E4;
 }
 
+.resize.flex_2_equal h4 {
+    font-size: 15px;
+}
+
 @media screen and (min-width:720px) {
     .show-on-desktop-only {
         display: inline-block !important;
@@ -645,6 +654,10 @@ label {
 }
 
 @media screen and (max-width:720px) {
+    .hero_section .flex_2_equal {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .logo {
         font-size: 30px;
     }
@@ -674,7 +687,9 @@ label {
     }
 
     .hero_section {
-        height: 30rem;
+        /* height: 30rem; */
+        height: max-content;
+        padding-bottom: 10%;
     }
 
     .hero_section p {
