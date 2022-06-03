@@ -65,12 +65,13 @@ app.get('/', (req, res) => {
         let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
         if (checkToken.user._id) {
             let { user } = checkToken;
-            res.render('homepage.ejs', { user })
+            // res.render('homepage.ejs', { user })
+            res.render('he.ejs', { user })
         } else {
-            res.render('homepage.ejs')
+            res.render('he.ejs')
         }
     } else {
-        res.render('homepage.ejs');
+        res.render('he.ejs');
     }
 })
 app.get('/templates', mildMiddleware, (req, res) => {

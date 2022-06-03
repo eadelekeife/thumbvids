@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Circular Medium';
+    src: url('../fonts/Circular-Medium.woff');
+}
+
+@font-face {
+    font-family: 'Recoleta Medium';
+    src: url('../fonts/Recoleta-RegularDEMO.otf');
+}
+
+body {
+    font-family: 'Circular Medium' !important;
+    font-size: 10px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Recoleta Medium';
+}
+
+.contain {
+    padding-right: 80px !important;
+    padding-left: 80px !important;
+}
+
+.new_hero_section {
+    background: #fff;
+}
+
+.new_hero_section h1 {
+    font-size: 2.5rem;
+    font-family: 'Recoleta Medium';
+    color: #250e62;
+    font-weight: 900;
+    width: 80%;
+}
+
+.new_hero_section p {
+    color: #131313;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 90%;
+}
+
+.new_hero_section img {
+    border-radius: 4px;
+}
+
+.thumbvids_color_cover {
+    background: #221F14;
+}
+
+.bg_red {
+    background: #BFA78C;
+}
