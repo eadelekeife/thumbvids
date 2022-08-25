@@ -66,12 +66,15 @@ app.get('/', (req, res) => {
         if (checkToken.user._id) {
             let { user } = checkToken;
             // res.render('homepage.ejs', { user })
-            res.render('he.ejs', { user })
+            res.render('h.ejs', { user })
+            // res.render('he.ejs', { user })
         } else {
-            res.render('he.ejs')
+            res.render('h.ejs')
+            // res.render('he.ejs')
         }
     } else {
-        res.render('he.ejs');
+        res.render('h.ejs')
+        // res.render('he.ejs');
     }
 })
 app.get('/templates', mildMiddleware, (req, res) => {
@@ -653,5 +656,5 @@ app.post('/saveThumbnailToDB', middleware, async (req, res) => {
 
 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 9000;
 app.listen(port, () => console.log('server listening on port', port));

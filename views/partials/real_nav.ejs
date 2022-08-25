@@ -1,30 +1,27 @@
 <div class="navigation">
     <div class="side_flex">
-        <a style="color: #000;" href="/">
-            <h3 class="logo">Thumbvids</h3>
+        <a style="color: #fff;" href="/">
+            <!-- <h3 class="logo">Thumbvids</h3> -->
+            <img src="/images/logo.svg" alt="logo" />
         </a>
+
+        <!-- <div>
+            <ul>
+                <li class="sec_nav">
+                    <a href="/templates">All Templates</a>
+                </li>
+                <li>|</li>
+                <li class="sec_nav">
+                    <a href="">My Portfolio</a>
+                </li>
+                <li class="sec_nav">
+                    <a href="">My Resume</a>
+                </li>
+            </li>
+        </div> -->
     </div>
     <div>
         <ul>
-            <li class="sec_nav">
-                <a href="">Product</a>
-            </li>
-            <li class="sec_nav">
-                <a href="">Solutions</a>
-            </li>
-            <li class="sec_nav">
-                <a href="">Customers</a>
-            </li>
-            <li class="sec_nav">
-                <a href="">Learn</a>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li class="show-on-desktop-only">
-                <a href="/templates">Templates</a>
-            </li>
             <!-- <li class="show-on-desktop-only">
                 <a href="/templates">Design from scratch</a>
             </li> -->
@@ -33,12 +30,18 @@
                 <li class="show-on-desktop-only"><a href="">Hi there, <%= user.firstName %></a></li>
                 <a class="show-on-desktop-only bg_red" href="/signup">Sign out</a>
                 <% } else { %>
+                    <li class="sec_nav border_right">
+                        <a href="/templates">All Templates</a>
+                    </li>
+                    <li class="show-on-desktop-only">
+                        <a href="/signin">Login</a>
+                    </li>
                     <li class="show-on-desktop-only" style="padding-right: 0">
-                        <a class="bg_black" href="/signup">Create a free account</a>
+                        <a class="bg_red" href="/signup">Create a free account</a>
                     </li>
                     <% } %>
                         <li class="show-on-mobile-only">
-                            <a class="bg_black" href="/templates">Templates</a>
+                            <a class="bg_red" href="/templates">Templates</a>
                         </li>
         </ul>
     </div>
