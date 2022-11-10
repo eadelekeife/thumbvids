@@ -1,13 +1,21 @@
 $(document).ready(function () {
     $(window).on('scroll', function () {
         if ($(window).scrollTop() > 100) {
-            $('.navigation').addClass('fix');
+            $('.navigation').addClass('fixed');
         } else {
-            $('.navigation').removeClass('fix');
+            $('.navigation').removeClass('fixed');
         }
+    })
+
+    $('#redesigned-menu').on('click', () => {
+        $('#redesigned-nav-content').css('display', 'flex');
+    })
+    $('#redesigned-times').on('click', () => {
+        $('#redesigned-nav-content').css('display', 'none');
     })
 })
 let currStyle;
+
 document.querySelector('.nav .header-icon ').addEventListener('click', () => {
     if (!currStyle) {
         currStyle = getComputedStyle(document.querySelector('.small ul')).display;

@@ -194,6 +194,13 @@ footer h3 {
 footer .grid_4 {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    align-items: unset;
+}
+
+footer .grid_4 ion-icon {
+    color: #91949c;
+    font-size: 1.4rem;
+    margin-right: 10px;
 }
 
 footer .sec_footer p {

@@ -1,8 +1,8 @@
 <div class="navigation">
     <div class="side_flex">
         <a style="color: #fff;" href="/">
-            <!-- <h3 class="logo">Thumbvids</h3> -->
-            <img src="/images/logo.svg" alt="logo" />
+            <h3 class="logo">Thumbvids</h3>
+            <!-- <img src="/images/logo.svg" alt="logo" /> -->
         </a>
 
         <!-- <div>
@@ -21,28 +21,21 @@
         </div> -->
     </div>
     <div>
-        <ul>
-            <!-- <li class="show-on-desktop-only">
-                <a href="/templates">Design from scratch</a>
-            </li> -->
-            <% if(typeof user !=='undefined' ) { %>
-                <!-- <li><a href="/google" target="_blank">Link Youtube</a></li> -->
-                <li class="show-on-desktop-only"><a href="">Hi there, <%= user.firstName %></a></li>
-                <a class="show-on-desktop-only bg_red" href="/signup">Sign out</a>
-                <% } else { %>
-                    <li class="sec_nav border_right">
-                        <a href="/templates">All Templates</a>
-                    </li>
-                    <li class="show-on-desktop-only">
-                        <a href="/signin">Login</a>
-                    </li>
-                    <li class="show-on-desktop-only" style="padding-right: 0">
-                        <a class="bg_red" href="/signup">Create a free account</a>
-                    </li>
-                    <% } %>
-                        <li class="show-on-mobile-only">
-                            <a class="bg_red" href="/templates">Templates</a>
-                        </li>
-        </ul>
+        <img src="/images/homepage/redesign/menu.svg" class="menubar" id="redesigned-menu" alt="open menu" />
     </div>
+</div>
+<div class="nav-content" id="redesigned-nav-content">
+    <ul>
+        <li><a href="">Design from Scratch</a></li>
+        <li><a href="">See all Templates</a></li>
+        <li><a href="">See my Portfolio</a></li>
+        <li><a href="">Call me now</a></li>
+        <li><a href="">Send me a mail</a></li>
+        <li><a href="">See all Templates</a></li>
+        <li><a href="">See all Templates</a></li>
+        <li><a href="">Create an Account</a></li>
+        <li><a href="">Log in to your profile</a></li>
+        <li><a href="">Download my Resume</a></li>
+    </ul>
+    <img src="/images/homepage/redesign/x.svg" id="redesigned-times" class="times" alt="close menu" />
 </div>
