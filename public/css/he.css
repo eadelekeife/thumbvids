@@ -35,6 +35,12 @@ body {
     padding-left: 50px !important;
 }
 
+.templates .contain {
+    width: 100% !important;
+    margin: 0% !important;
+    padding: 0 3% !important;
+}
+
 .grid_flex {
     display: flex;
     align-items: center;

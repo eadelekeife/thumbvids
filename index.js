@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
             let { user } = checkToken;
             // res.render('homepage.ejs', { user })
             // res.render('h.ejs', { user })
-            res.render('e.ejs', { user })
+            res.render('h.ejs', { user })
             // res.render('he.ejs', { user })
         } else {
             res.render('h.ejs')
