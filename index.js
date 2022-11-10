@@ -92,18 +92,28 @@ app.get('/templates', mildMiddleware, (req, res) => {
         .catch(err => res.send(err))
 })
 
-app.get('/signin', mildMiddleware, (req, res) => {
-    if (res.body) {
-        res.render('login.ejs', { user: res.body })
+app.get('/signin', (req, res) => {
+    if (req.session.token) {
+        let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
+        if (checkToken.user._id) {
+            res.redirect('/');
+        } else {
+            res.render('login.ejs');
+        }
     } else {
-        res.render('login.ejs')
+        res.render('login.ejs');
     }
 })
-app.get('/signup', mildMiddleware, (req, res) => {
-    if (res.body) {
-        res.render('signup.ejs', { user: res.body })
+app.get('/signup', (req, res) => {
+    if (req.session.token) {
+        let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
+        if (checkToken.user._id) {
+            res.redirect('/');
+        } else {
+            res.render('signup.ejs');
+        }
     } else {
-        res.render('signup.ejs')
+        res.render('signup.ejs');
     }
 })
 app.post('/signup', async (req, res) => {
