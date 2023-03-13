@@ -11,7 +11,8 @@ let templatesSchema = new mongoose.Schema({
     description: String,
     category: String,
     tags: Array,
-    svgCode: JSON,
+    // svgCode: JSON,
+    svgCode: String,
     date: {
         type: Date,
         default: new Date()

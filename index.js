@@ -80,14 +80,10 @@ app.get('/', (req, res) => {
         // res.render('he.ejs');
     }
 })
-app.get('/templates', mildMiddleware, (req, res) => {
-    templates.find({})
+app.get('/templates', (req, res) => {
+    templates.find({}).select('name tags _id location category')
         .then(data => {
-            if (res.body) {
-                res.render('temp.ejs', { user: res.body, data })
-            } else {
-                res.render('temp.ejs', { data })
-            }
+            res.render('temp.ejs', { data })
         })
         .catch(err => res.send(err))
 })
@@ -235,7 +231,6 @@ app.get('/templates/:tagName', mildMiddleware, async (req, res) => {
 app.post('/saveTemplates', (req, res) => {
     const url = './public/templates/thumbnails/' + Date.now();
     base64Img.img(req.body.message, '', url, function (err, filepath) { });
-
     try {
         let template = new templates();
         template.name = req.body.templateName;
@@ -246,9 +241,9 @@ app.post('/saveTemplates', (req, res) => {
         template.category = req.body.category;
         template.save();
 
-        users.populate({
+        // users.populate({
 
-        })
+        // })
         res.send('Template Saved');
     } catch (err) {
         res.send(err);
@@ -666,7 +661,6 @@ app.post('/saveThumbnailToDB', middleware, async (req, res) => {
             res.json(errorMessage)
         })
 })
-
 
 
 const port = process.env.PORT || 9000;

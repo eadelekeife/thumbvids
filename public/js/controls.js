@@ -15,6 +15,8 @@ function resize() {
 
   let width = size * 0.70;
   height = width / 1.77778;
+  // let width = 1280;
+  // let height = 720;
   canvas.setWidth(width);
   canvas.setHeight(height);
   canvas.calcOffset();
@@ -1177,7 +1179,7 @@ document.getElementById('templates').addEventListener('submit', e => {
 
   // , { multiplier: 2 }
   // https://thumbvids.herokuapp.com/saveTemplate
-  fetch('http://localhost:8080/saveTemplates', {
+  fetch('http://localhost:9000/saveTemplates', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
@@ -1188,7 +1190,8 @@ document.getElementById('templates').addEventListener('submit', e => {
       category: e.target[2].value,
       tags: tagBox,
       description: e.target[3].value,
-      svgFile: canvas.toJSON(),
+      // svgFile: canvas.toJSON(),
+      svgFile: canvas.toSVG(),
     })
   })
     .then(() => {
@@ -1198,27 +1201,9 @@ document.getElementById('templates').addEventListener('submit', e => {
   // saveAs(blob, "yournewfile.png");
 })
 
-
-// 🙂
-
-// document.querySelector('.save').addEventListener('click', () => {
-//   const canvasFile = canvas.toDataURL({
-//     format: 'png',
-//     quality: 1,
-//     multiplier: 2,
-//     left: 0,
-//     top: 0,
-//   });
-//   var link = document.getElementById('link');
-//     link.setAttribute('download', 'MintyPaper.png');
-//     link.setAttribute('href', canvasFile.replace("image/png", "image/octet-stream", { multiplier: 2 }));
-//     link.click();
-// })
-
 document.querySelector('#download').addEventListener('click', () => {
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
-      console.log('Would have worked but i am happy here')
       e.preventDefault();
     }
   })

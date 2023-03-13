@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/fabric.min.js"></script>
 
     <link
         href="https://fonts.googleapis.com/css?family=Montez|Lobster|Josefin+Sans|Shadows+Into+Light|Pacifico|Amatic+SC:700|Orbitron:400,900|Rokkitt|Righteous|Dancing+Script:700|Bangers|Chewy|Sigmar+One|Architects+Daughter|Abril+Fatface|Covered+By+Your+Grace|Kaushan+Script|Gloria+Hallelujah|Satisfy|Lobster+Two:700|Comfortaa:700|Cinzel|Courgette|Lato|Open+Sans|Roboto|Josefin+Slab|Barlow+Condensed|Dosis|DM+Sans|Poppins|Nixie+One"
@@ -27,7 +28,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0/fabric.min.js "></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0/fabric.min.js "></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script> -->
     <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
     <script
         src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
@@ -786,7 +788,7 @@
     <button id="openModal" style="display: none;" onclick="getVideos()" data-toggle="modal" data-target="#openingModal"
         data-backdrop="static" data-keyboard="false">
     </button>
-    <input type="text" value="<%= JSON.stringify(canvas) %>" style="display: none;" id="urlData">
+    <input type="text" value="<%= canvas %>" style="display: none;" id="urlData">
     <script>
         var openFirstModal = document.getElementById('openModal');
         openFirstModal.click();

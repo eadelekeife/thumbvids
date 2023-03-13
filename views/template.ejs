@@ -46,6 +46,142 @@
     <section class="mt-5">
         <div class="contain">
 
+            <div class="template_block_cover">
+                <h4 class="template_block_title">Money</h4>
+                <div class="template_block_body">
+                    <div class="grid_4">
+                        <% data.forEach(temp=> {
+                            if(temp.category === "Money") { %>
+                            <div class="template_design">
+                                <img data-toggle="modal" data-target="#myModal"
+                                    src="../<%= temp.location.slice(8) %>"
+                                    data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                    data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                    data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                    alt="templates">
+                                <div class="tag_blocks">
+                                    <% temp.tags.forEach(tag=> { %>
+                                        <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                <%= tag %>
+                                            </a></div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                            <% } }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="template_block_cover">
+                <h4 class="template_block_title">Travel</h4>
+                <div class="template_block_body">
+                    <div class="grid_4">
+                        <% data.forEach(temp=> {
+                            if(temp.category === "Travel") { %>
+                            <div class="template_design">
+                                <!-- <button type="button" data-toggle="modal" data-target="#myModal"> -->
+                                <img data-toggle="modal" data-target="#myModal"
+                                    src="../<%= temp.location.slice(8) %>"
+                                    data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                    data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                    data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                    alt="templates">
+                                <!-- </button> -->
+                                <div class="tag_blocks">
+                                    <% temp.tags.forEach(tag=> { %>
+                                        <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                <%= tag %>
+                                            </a></div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                            <% } }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="template_block_cover">
+                <h4 class="template_block_title">Technology</h4>
+                <div class="template_block_body">
+                    <div class="grid_4">
+                        <% data.forEach(temp=> {
+                            if(temp.category === "Technology") { %>
+                            <div class="template_design">
+                                <!-- <button type="button" data-toggle="modal" data-target="#myModal"> -->
+                                <img data-toggle="modal" data-target="#myModal"
+                                    src="../<%= temp.location.slice(8) %>"
+                                    data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                    data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                    data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                    alt="templates">
+                                <!-- </button> -->
+                                <div class="tag_blocks">
+                                    <% temp.tags.forEach(tag=> { %>
+                                        <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                <%= tag %>
+                                            </a></div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                            <% } }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="template_block_cover">
+                <h4 class="template_block_title">Motivational</h4>
+                <div class="template_block_body">
+                    <div class="grid_4">
+                        <% data.forEach(temp=> {
+                            if(temp.category === "Motivational") { %>
+                            <div class="template_design">
+                                <!-- <button type="button" data-toggle="modal" data-target="#myModal"> -->
+                                <img data-toggle="modal" data-target="#myModal"
+                                    src="../<%= temp.location.slice(8) %>"
+                                    data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                    data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                    data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                    alt="templates">
+                                <!-- </button> -->
+                                <div class="tag_blocks">
+                                    <% temp.tags.forEach(tag=> { %>
+                                        <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                <%= tag %>
+                                            </a></div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                            <% } }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="template_block_cover">
+                <h4 class="template_block_title">Business</h4>
+                <div class="template_block_body">
+                    <div class="grid_4">
+                        <% data.forEach(temp=> {
+                            if(temp.category === "Business") { %>
+                            <div class="template_design">
+                                <!-- <button type="button" data-toggle="modal" data-target="#myModal"> -->
+                                <img data-toggle="modal" data-target="#myModal"
+                                    src="../<%= temp.location.slice(8) %>"
+                                    data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
+                                    data-svg="<%= JSON.stringify(temp.svgCode) %>"
+                                    data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
+                                    alt="templates">
+                                <!-- </button> -->
+                                <div class="tag_blocks">
+                                    <% temp.tags.forEach(tag=> { %>
+                                        <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
+                                                <%= tag %>
+                                            </a></div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                            <% } }) %>
+                    </div>
+                </div>
+            </div>
+
+
+
             <h5 class="mt-5">All templates</h5>
             <hr>
             <div class="row">

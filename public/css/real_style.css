@@ -121,24 +121,36 @@ body, html {
     width: 100%;
     height: 100%;
     z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     display: none;
 }
 
 .nav-content ul {
     margin: 0%;
+    padding-top: 40px;
 }
 
 .nav-content ul li {
     list-style: none;
-    text-align: center;
+}
+
+.nav-content .nav-socials {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.nav-content .nav-socials a {
+    color: #fff;
+    margin-right: 20px;
+}
+
+.nav-content .nav-socials a ion-icon {
+    font-size: 2rem;
 }
 
 .nav-content .times {
     position: absolute;
-    top: 10px;
+    top: 40px;
     right: 20px;
     border-radius: 50%;
     border: 2px solid #fff;
@@ -1117,4 +1129,13 @@ label {
 
 .download_action_button.second_one {
     display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .nav-content .times {
+        left: 20px;
+    }
+    .nav-content ul {
+        padding-top: 120px;
+    }
 }

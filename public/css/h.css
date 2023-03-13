@@ -189,6 +189,7 @@ footer ul li {
 
 footer h3 {
     font-size: .9rem;
+    color: #fff;
 }
 
 footer .grid_4 {
@@ -228,4 +229,99 @@ footer .sec_footer button {
     color: #fff;
     border-radius: 0px 3px 3px 0px;
     border: 1px solid #EF3D3D;
+}
+
+li.menubar path {
+    color: #fff;
+    /* .menu-icon path */
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-5 img {
+    width: 100%;
+    height: 100%;
+}
+
+.website-redesign {
+    background: #000;
+}
+
+.website-redesign .hero h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.website-redesign .hero {
+    padding: 5% 0px;
+}
+
+.website-redesign .hero .grid_4 {
+    grid-gap: 20px;
+}
+
+.website-redesign .hero .grid_4 img {
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 720px) {
+    footer .grid_4 {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+    }
+
+    .new_homepage_design .grid_2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .new_homepage_design .second_props h3,
+    .new_homepage_design .second_props h3 span {
+        font-size: 2rem;
+    }
+
+    .new_homepage_design .second_props p:first-child {
+        margin-left: -30px;
+        width: 70%;
+    }
+
+    .new_homepage_design .third_props .grid_2 p, header .grid_2 p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .new_homepage_design .third_props .grid_2 h2, header .grid_2 h2 {
+        font-size: 1.4rem;
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+
+    .new_homepage_design .third_props .grid_2 img, .new_homepage_design header .grid_2 img {
+        width: 100%;
+        padding: 5% 0;
+    }
+
+    .third_props a, header .grid_2 a {
+        display: block;
+        width: max-content;
+        padding: 8px 25px;
+    }
+
+    .third_props, header {
+        padding: 15% 0px;
+    }
+
+    .website-redesign .hero {
+        padding: 15% 0px;
+    }
+
+    .website-redesign .hero h1 {
+        font-size: 1.6rem;
+    }
 }
