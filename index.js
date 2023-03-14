@@ -83,7 +83,8 @@ app.get('/', (req, res) => {
 app.get('/templates', (req, res) => {
     templates.find({}).select('name tags _id location category')
         .then(data => {
-            res.render('temp.ejs', { data })
+            let randomNumber = Math.trunc(Math.random() * (data.length - 4)) + 1;
+            res.render('temp.ejs', { data, randomNumber })
         })
         .catch(err => res.send(err))
 })
