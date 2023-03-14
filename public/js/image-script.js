@@ -50,24 +50,23 @@ window.addEventListener('resize', resize)
 // canvas.renderAll();
 
 if (typeof document.getElementById('urlData').value !== 'undefined') {
-  // canvas.loadFromJSON(document.getElementById('urlData').value, canvas.renderAll.bind(canvas))
-  let svgData = document.getElementById('urlData').value.slice(0);
+  canvas.loadFromJSON(document.getElementById('urlData').value, canvas.renderAll.bind(canvas))
+  // let svgData = document.getElementById('urlData').value.slice(0);
 
-  console.log(svgData)
-  var svg
+  // console.log(svgData)
+  // var svg
 
   //svg string
-  svg = '<svg><path d="M 48.5 12 Q 48.5 12 49 12 Q 49.5 12 49.25 11.5 Q 49 11 48.5 11 Q 48 11 47.5 11 Q 47 11 45.5 11.5 Q 44 12 43.5 12 Q 43 12 41.5 12.5 Q 40 13 39 13.5 Q 38 14 37 14 Q 36 14 35 14 Q 34 14 33 14.5 Q 32 15 31 15.5 Q 30 16 28 16.5 Q 26 17 25 17 Q 24 17 23 17.5 Q 22 18 21 18.5 Q 20 19 19 19.5 Q 18 20 17.5 20.5 Q 17 21 16.5 21.5 Q 16 22 16 22.5 Q 16 23 15.5 23.5 Q 15 24 14.5 25 Q 14 26 14 26.5 Q 14 27 13.5 28 Q 13 29 12.5 30 Q 12 31 11.5 32 Q 11 33 11 33.5 Q 11 34 10.5 35 Q 10 36 9.5 37 Q 9 38 9 39 Q 9 40 8.5 40.5 Q 8 41 8 41.5 Q 8 42 7.5 42.5 Q 7 43 7 43.5 Q 7 44 7 44.5 Q 7 45 7 45.5 Q 7 46 7 46.5 Q 7 47 7 47.5 Q 7 48 7 48.5 Q 7 49 7 49.5 Q 7 50 7.5 50.5 Q 8 51 8.5 51 Q 9 51 9 51.5 Q 9 52 9.5 52 Q 10 52 10 52.5 Q 10 53 10.5 53.5 Q 11 54 11.5 54 Q 12 54 12.5 54 Q 13 54 13 54.5 Q 13 55 13.5 55 Q 14 55 14.5 55.5 Q 15 56 15.5 56 Q 16 56 16.5 56 Q 17 56 18 56 Q 19 56 19.5 56.5 Q 20 57 20.5 57 Q 21 57 21.5 57 Q 22 57 23 57 Q 24 57 25 57.5 Q 26 58 26.5 58 Q 27 58 27.5 58 Q 28 58 29 58 Q 30 58 30.5 58 Q 31 58 31.5 58 Q 32 58 32.5 58 Q 33 58 33 57.5 Q 33 57 33.5 57 Q 34 57 34 56.5 Q 34 56 34.5 55.5 Q 35 55 35 54.5 Q 35 54 35.5 54 Q 36 54 36.5 53.5 Q 37 53 37.5 52.5 Q 38 52 38 51.5 Q 38 51 38.5 50.5 Q 39 50 39.5 49.5 Q 40 49 40.5 48.5 Q 41 48 41 47.5 Q 41 47 41.5 47 Q 42 47 42 46 Q 42 45 42.5 45 Q 43 45 43.5 44.5 Q 44 44 44.5 43 Q 45 42 45.5 41.5 Q 46 41 46.5 40.5 Q 47 40 47.5 40 Q 48 40 48 39.5 Q 48 39 48.5 38.5 Q 49 38 49.5 37.5 Q 50 37 50.5 36.5 Q 51 36 51 35.5 Q 51 35 51.5 35 Q 52 35 52 34.5 Q 52 34 52 33.5 Q 52 33 52.5 33 Q 53 33 53 32.5 Q 53 32 53 31.5 Q 53 31 53 30.5 Q 53 30 53 29.5 Q 53 29 53 28.5 Q 53 28 53 27.5 Q 53 27 53 26.5 Q 53 26 53 25.5 Q 53 25 53 24.5 Q 53 24 53 23.5 Q 53 23 53 22.5 Q 53 22 53 21.5 Q 53 21 52.5 20.5 Q 52 20 52 19.5 Q 52 19 51.5 18.5 Q 51 18 50.5 18 Q 50 18 50 17.5 Q 50 17 49.5 16.5 Q 49 16 49 15.5 L 49 15" style="stroke: rgba(0, 0, 0, 1); stroke-width: 10; stroke-dasharray: ; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(30 34.5) translate(-30, -34.5) " stroke-linecap="round" /></svg>'
   // fabric.loadSVGFromString(svg, function (objects, options) {
   //   var obj = fabric.util.groupSVGElements(objects, options);
   //   console.log(objects);
   //   canvas.add(obj)
   // });
-  fabric.loadSVGFromString(document.getElementById('urlData').value, function (objects, options) {
-    var obj = fabric.util.groupSVGElements(objects, options);
-    canvas.add(obj)
-  });
-  canvas.renderAll();
+  // fabric.loadSVGFromString(document.getElementById('urlData').value, function (objects, options) {
+  //   var obj = fabric.util.groupSVGElements(objects, options);
+  //   canvas.add(obj)
+  // });
+  // canvas.renderAll();
 }
 canvas.backgroundColor = '#ffffff';
 const navToHide = ['defaultView', 'backgroundControls', 'effectsControls', 'textsControls', 'cinemaControls',

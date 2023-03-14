@@ -39,11 +39,12 @@
                                                 data-tags="<%= temp.tags %>" data-id="<%= temp._id %>" class="img-fluid"
                                                 alt="templates">
                                             <div class="tag_blocks">
-                                                <% temp.tags.forEach(tag=> { %>
+                                                <% temp.tags.forEach(tag=> {
+                                                    if(tag.length) { %>
                                                     <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
                                                             <%= tag %>
                                                         </a></div>
-                                                    <% }) %>
+                                                    <% } }) %>
                                             </div>
                                         </div>
                                         <% }) %>
@@ -102,20 +103,19 @@
                                         <div class="grid_4">
                                             <% data .slice(randomNumber,randomNumber + 4) .forEach(temp=> { %>
                                                 <div class="template_design">
-                                                    <img 
-                                                     data-target="#myModal"
-                                                        src="../<%= temp.location.slice(8) %>"
+                                                    <img data-target="#myModal" src="../<%= temp.location.slice(8) %>"
                                                         data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
                                                         data-svg="<%= JSON.stringify(temp.svgCode) %>"
                                                         data-tags="<%= temp.tags %>" data-id="<%= temp._id %>"
                                                         class="img-fluid" alt="templates">
                                                     <div class="tag_blocks">
-                                                        <% temp.tags.forEach(tag=> { %>
+                                                        <% temp.tags.forEach(tag=> {
+                                                            if(tag.length) { %>
                                                             <div class="tags"><a href="/templates/<%= tag %>"
                                                                     class="text-dark">
                                                                     <%= tag %>
                                                                 </a></div>
-                                                            <% }) %>
+                                                            <% } }) %>
                                                     </div>
                                                 </div>
                                                 <% }) %>

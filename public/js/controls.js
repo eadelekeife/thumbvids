@@ -1190,8 +1190,8 @@ document.getElementById('templates').addEventListener('submit', e => {
       category: e.target[2].value,
       tags: tagBox,
       description: e.target[3].value,
-      // svgFile: canvas.toJSON(),
-      svgFile: canvas.toSVG(),
+      svgFile: canvas.toJSON(),
+      // svgFile: canvas.toSVG(),
     })
   })
     .then(() => {

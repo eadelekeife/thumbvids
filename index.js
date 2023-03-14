@@ -197,11 +197,13 @@ app.get('/createTemplates', (req, res) => {
 app.get('/edit/:id', mildMiddleware, (req, res) => {
     if (res.body) {
         templates.findById(req.params.id)
-            .then(data => res.render('testedit.ejs', { canvas: data.svgCode, user: res.body }))
+            // .then(data => res.render('testedit.ejs', { canvas: data.svgCode, user: res.body }))
+            .then(data => res.render('testedit.ejs', { canvas: data.jsonCode, user: res.body }))
             .catch(err => res.send(err))
     } else {
         templates.findById(req.params.id)
-            .then(data => res.render('testedit.ejs', { canvas: data.svgCode }))
+            // .then(data => res.render('testedit.ejs', { canvas: data.svgCode }))
+            .then(data => res.render('testedit.ejs', { canvas: data.jsonCode }))
             .catch(err => res.send(err))
     }
 })
@@ -235,7 +237,8 @@ app.post('/saveTemplates', (req, res) => {
     try {
         let template = new templates();
         template.name = req.body.templateName;
-        template.svgCode = req.body.svgFile;
+        // template.svgCode = req.body.svgFile;
+        template.jsonCode = req.body.svgFile;
         template.description = req.body.description;
         template.location = url + '.png';
         template.tags = req.body.tags;
