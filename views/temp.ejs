@@ -98,11 +98,12 @@
                                         </div>
                                     </div>
                                     <div class="template_block_body">
-                                        <h3>See other templates (<%= randomNumber %>)</h3>
+                                        <h3>See other templates</h3>
                                         <div class="grid_4">
                                             <% data .slice(randomNumber,randomNumber + 4) .forEach(temp=> { %>
                                                 <div class="template_design">
-                                                    <img data-toggle="modal" data-target="#myModal"
+                                                    <img 
+                                                     data-target="#myModal"
                                                         src="../<%= temp.location.slice(8) %>"
                                                         data-desc="<%= temp.description %>" data-name="<%= temp.name %>"
                                                         data-svg="<%= JSON.stringify(temp.svgCode) %>"
