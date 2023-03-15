@@ -68,6 +68,27 @@
     src: url('../fonts/sailec/Sailec-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Akira Expanded';
+    src: url('../fonts/Akira/Akira\ Expanded\ Demo.otf');
+}
+
+@font-face {
+    font-family: 'Recoleta';
+    src: url('../fonts/Recoleta-RegularDEMO.otf');
+}
+
+@font-face {
+    font-family: 'Jelani';
+    src: url('../fonts/jelani.woff');
+}
+
+@font-face {
+    font-family: 'Fake Serif';
+    src: url('../fonts/Fake\ Serif.otf');
+}
+
+
 * {
     margin: 0%;
     padding: 0%;

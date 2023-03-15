@@ -143,6 +143,7 @@ function showTextStyling() {
     fonts.removeAttribute('selected')
     if (fonts.textContent == obj.fontFamily) {
       fonts.setAttribute('selected', 'true');
+
     }
   }
   if (obj.getStyleAtPosition(obj.selectionStart).fontStyle === 'italic') {
@@ -983,7 +984,10 @@ function changeFontFamily(event) {
 
 
 (function getFonts() {
-  var fonts = ["Josefin Slab", "Open Sans", "Poppins", "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto", "Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
+  var fonts = ["Josefin Slab", "Open Sans", "Sofia Pro Bold", "Poppins", "Wotfard Regular", "Cerebri Medium",
+    "Freight Text Medium", "Gordita Bold", "Gordita Regular", "Maison Neue Book", "Sailec Regular", "Maison Neue Bold",
+    "Akira Expanded", "Recoleta", "Fake Serif", "Jelani",
+    "Lato", "DM Sans", "Dosis", "Barlow Condensed", "Roboto", "Nixie One", "Montez", "Lobster", "Josefin Sans", "Shadows Into Light", "Pacifico", "Amatic SC", "Orbitron", "Rokkitt", "Righteous", "Dancing Script", "Bangers", "Chewy",
     "Sigmar One", "Architects Daughter", "Abril Fatface", "Covered By Your Grace", "Kaushan Script", "Gloria Hallelujah", "Satisfy", "Lobster Two", "Comfortaa", "Cinzel", "Courgette"];
   fonts.forEach(datum => {
 
