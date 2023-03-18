@@ -687,24 +687,6 @@
                             <div class="flex_div">
                                 <div class="contain">
                                     <h3>Thank you for using Thumbvids</h3>
-                                    <p>Give your customers the gift of modern, frictionless, painless payments.
-                                        Integrate
-                                        Paystack once and let your customers pay you however they want.</p>
-                                    <p>If you can imagine it, you can build it with Paystack.</p>
-                                    <ul>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                    </ul>
                                     <button onclick="saveVideos()" id="download"
                                         class="bg_black download_action_button first_one">Download design for
                                         free
@@ -727,49 +709,6 @@
             </div>
         </div>
     </div>
-    <div id="openingModal" class="template_modal modal fade" role="dialog">
-        <div class="modal-dialog .modal-dialog-scrollable">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <h5 class="modal-title" id="modalCardHeader">Select Account</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="">
-                        <div class="flex_template">
-                            <div class="flex_div">
-                                <div class="contain">
-                                    <h3>Thank you for using Thumbvids</h3>
-                                    <p>Give your customers the gift of modern, frictionless, painless payments.
-                                        Integrate
-                                        Paystack once and let your customers pay you however they want.</p>
-                                    <p>If you can imagine it, you can build it with Paystack.</p>
-                                    <ul>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                        <li>Understand your customers’ purchase patterns and do easy reconciliations
-                                            with a
-                                            robust data Dashboard and easy exports.</li>
-                                    </ul>
-                                    <button data-dismiss="modal" class="bg_black">Continue</button>
-                                </div>
-                            </div>
-                            <div class="flex_div opening_template_div">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal show in" id="myModall">
         <div class="modal-header">
             <a class="close" data-dismiss="modal">×</a>
@@ -785,23 +724,10 @@
     </div>
     <div id="pageLoader"></div>
     <a id="link"></a>
-    <button id="openModal" style="display: none;" onclick="getVideos()" data-toggle="modal" data-target="#openingModal"
+    <!-- <button id="openModal" style="display: none;" onclick="getVideos()" data-toggle="modal" data-target="#openingModal"
         data-backdrop="static" data-keyboard="false">
-    </button>
+    </button> -->
     <input type="text" value="<%= JSON.stringify(canvas) %>" style="display: none;" id="urlData">
-    <script>
-        var openFirstModal = document.getElementById('openModal');
-        openFirstModal.click();
-        // $(document).ready(function () {
-        //     // $('#myModal').addClass('show');
-        //     // $('#myModal').addClass('in');
-        //     $("#myModal").css("display", "block");
-        //     $('#mybutton').on('click', () => {
-        //         alert('hello')
-        //     })
-        // });
-    </script>
-
 
     </script>
     <script src="../js/image-script.js"></script>

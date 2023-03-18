@@ -93,6 +93,7 @@
     margin: 0%;
     padding: 0%;
     font-family: 'Gordita Regular';
+    font-family: 'Wotfard Regular';
 }
 
 h1, h2, h3, h4, h5, h6, a, button {
@@ -274,6 +275,7 @@ body, html {
     margin: 0%;
     font-weight: 500;
     font-family: 'Gordita Regular';
+    font-family: 'Wotfard Regular';
 }
 
 .navigation ul li:last-child a {
@@ -788,7 +790,8 @@ label {
     font-weight: 400;
     text-decoration: none;
     font-family: 'Wotfard Regular';
-    font-size: .9rem;
+    font-size: .8rem;
+    color: rgba(0, 0, 0, .7) !important;
 }
 
 .templates .grid_4 img {
@@ -1050,6 +1053,7 @@ label {
         display: none;
     }
 
+
     .templates .templates_hero .templates_hero_content h3 {
         font-size: 20px;
         font-weight: 800;
@@ -1255,15 +1259,18 @@ label {
     color: #fff;
     padding: 12px 15px;
     border-radius: 3px;
+    font-family: 'Wotfard Regular';
 }
 
 .price-tag {
     background: #000;
     color: #fff;
-    padding: 6px 15px;
+    padding: 4px 15px;
+    padding-bottom: 2px;
     width: max-content;
-    font-size: .7rem;
+    font-size: .6rem;
     border-radius: 50px;
+    font-family: 'Wotfard Regular';
 }
 
 .template-detail-display {
@@ -1279,6 +1286,7 @@ label {
     line-height: 2.1;
     color: #0d1216;
     font-size: .9rem;
+    font-family: 'Wotfard Regular';
 }
 
 #showColor {
@@ -1297,6 +1305,7 @@ label {
     border: 1px solid #8b3dff;
     opacity: 1;
     font-weight: unset;
+    font-family: 'Wotfard Regular';
 }
 
 button.close.modal_button {
@@ -1309,6 +1318,7 @@ button.close.modal_button {
     font-size: .9rem;
     opacity: 1;
     font-weight: unset;
+    font-family: 'Wotfard Regular';
 }
 
 .img-fluid.img-real {
@@ -1324,4 +1334,69 @@ button.close.modal_button {
 .modal.fade .template_block_body h3 {
     margin-top: 5%;
     font-size: 1rem;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .template-header-display .grid_2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    footer .grid_4 {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+    }
+
+    .template-header-display .grid_2 img {
+        width: 80%;
+        height: auto;
+        margin: unset;
+    }
+    .template-header-display h3 {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    .template-header-display p {
+        font-size: .9rem;
+        width: 100%;
+    }
+    .template-header-display {
+        padding-bottom: 30px;
+    }
+    .template-header-display button {
+        font-size: .9rem;
+    }
+
+    .template_block_body .grid_4 {
+        grid-gap: 5px;
+    }
+
+    footer p, footer ul li a {
+        line-height: 1.8;
+    }
+
+    .modal-body.template_preview .template_block_body {
+        display: none;
+    }
+
+    .modal-body.template_preview .row {
+        padding-bottom: 30px;
+    }
+    .navigation .mobile-only img {
+        font-size: 4rem;
+        height: 2rem;
+    }
 }
