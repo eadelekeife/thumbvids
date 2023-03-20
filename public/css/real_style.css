@@ -1254,12 +1254,14 @@ label {
     display: block;
 }
 
-.template-header-display button {
+.template-header-display a {
     background: #000;
     color: #fff;
     padding: 12px 15px;
     border-radius: 3px;
     font-family: 'Wotfard Regular';
+    display: block;
+    width: max-content;
 }
 
 .price-tag {
