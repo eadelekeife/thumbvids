@@ -22,10 +22,7 @@ const fs = require('fs');
 
 env.config();
 
-
 const app = express();
-
-
 
 var clientid = '';
 var client_secret = '';
@@ -36,7 +33,6 @@ readJson(path.join(__dirname, 'client_secret.json'), (err, data) => {
     clientid = data.web.client_id;
     client_secret = data.web.client_secret;
     redirect_url = data.web.redirect_uris;
-
 })
 
 const SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email'];
@@ -61,24 +57,23 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
-    if (req.session.token) {
-        let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
-        if (checkToken.user._id) {
-            let { user } = checkToken;
-            // res.render('homepage.ejs', { user })
-            // res.render('h.ejs', { user })
-            res.render('h.ejs', { user })
-            // res.render('he.ejs', { user })
-        } else {
-            res.render('h.ejs')
-            // res.render('e.ejs')
-            // res.render('he.ejs')
-        }
-    } else {
-        res.render('h.ejs')
-        // res.render('e.ejs')
-        // res.render('he.ejs');
-    }
+    // if (req.session.token) {
+    //     let checkToken = jwt.verify(req.session.token, 'abcdefghijklmnopqrstuvwxyz');
+    //     if (checkToken.user._id) {
+    //         let { user } = checkToken;
+    //         res.render('h.ejs', { user })
+    //     } else {
+    //         res.render('h.ejs')
+    //     }
+    // } else {
+    //     res.render('h.ejs')
+    // }
+    templates.find({}).select('name tags _id location category')
+        .then(data => {
+            let randomNumber = Math.trunc(Math.random() * (data.length - 4)) + 1;
+            res.render('temp.ejs', { data, randomNumber })
+        })
+        .catch(err => res.send(err))
 })
 app.get('/templates', (req, res) => {
     templates.find({}).select('name tags _id location category')
