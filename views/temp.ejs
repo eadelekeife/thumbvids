@@ -41,9 +41,11 @@
                                             <div class="tag_blocks">
                                                 <% temp.tags.forEach(tag=> {
                                                     if(tag.length) { %>
-                                                    <div class="tags"><a href="/templates/<%= tag %>" class="text-dark">
-                                                            <%= tag %>
-                                                        </a></div>
+                                                    <div class="tags">
+                                                        <!-- <a href="/templates/<%= tag %>" class="text-dark"> -->
+                                                        <%= tag %>
+                                                            <!-- </a> -->
+                                                    </div>
                                                     <% } }) %>
                                             </div>
                                         </div>
@@ -111,10 +113,12 @@
                                                     <div class="tag_blocks">
                                                         <% temp.tags.forEach(tag=> {
                                                             if(tag.length) { %>
-                                                            <div class="tags"><a href="/templates/<%= tag %>"
-                                                                    class="text-dark">
-                                                                    <%= tag %>
-                                                                </a></div>
+                                                            <div class="tags">
+                                                                <!-- <a href="/templates/<%= tag %>" -->
+                                                                <!-- class="text-dark"> -->
+                                                                <%= tag %>
+                                                                    <!-- </a> -->
+                                                            </div>
                                                             <% } }) %>
                                                     </div>
                                                 </div>
@@ -222,11 +226,11 @@
                     document.querySelector('#myModal a').innerHTML = "Use Template";
                     let tags = this.getAttribute('data-tags').split(',');
                     for (let tag of tags) {
-                        let createA = document.createElement('a');
+                        let createA = document.createElement('span');
                         let createDiv = document.createElement('div');
                         createDiv.classList.add('tags');
                         createA.classList.add('text-dark');
-                        createA.href = `/templates/${tag}`;
+                        // createA.href = `/templates/${tag}`;
                         createA.innerText = tag;
                         createDiv.appendChild(createA);
                         document.querySelector('#myModal #showTag').appendChild(createDiv);
