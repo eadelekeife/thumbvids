@@ -38,9 +38,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
-    <!-- <link href="loaders.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet"> -->
-    <!-- <link href="../css/styles.css" rel="stylesheet"> -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link href="https://api.fontshare.com/v2/css?f[]=array@700,701,400,601,600,401&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
     <link href="../css/styles-template.css" rel="stylesheet">
     <link href="/css/real_style.css" rel="stylesheet" type="text/css">
@@ -75,9 +78,9 @@
                         1280 x 720px
                     </button> -->
                     <button onclick="saveVideos()" id="download"
-                    class="btn white download_action_button first_one">Download design for
-                    free
-                </button>
+                        class="btn white download_action_button first_one">Download design for
+                        free
+                    </button>
                     <!-- <button class="btn white" id="getVideos" data-toggle="modal" data-target="#myModal"
                         data-backdrop="static" data-keyboard="false">
                         <i class="icon uil uil-download-alt"></i> <span> Save Thumbnail </span>
@@ -584,40 +587,21 @@
             </div>
         </div>
     </div>
-    <div class="card alt">
+    <div class="card alt sorry">
         <div class="navigation">
             <div class="side_flex">
-                <a style="color: #000;" href="/">
+                <a style="color: #fff; text-decoration: none;" href="/">
                     <h3 class="logo">Thumbvids</h3>
                 </a>
             </div>
-            <div>
-                <ul>
-                    <li class="show-on-desktop-only">
-                        <a href="/templates">Templates</a>
-                    </li>
-                    <li class="show-on-desktop-only">
-                        <a href="/templates">Design from scratch</a>
-                    </li>
-                    <% if(typeof user !=='undefined' ) { %>
-                        <!-- <li><a href="/google" target="_blank">Link Youtube</a></li> -->
-                        <li class="show-on-desktop-only"><a href="">Hi there, <%= user.firstName %></a></li>
-                        <a class="show-on-desktop-only bg_red" href="/signup">Sign out</a>
-                        <% } else { %>
-                            <li class="show-on-desktop-only" style="padding-right: 0">
-                                <a class="bg_black" href="/signup">Create a free account</a>
-                            </li>
-                            <% } %>
-                                <li class="show-on-mobile-only">
-                                    <a class="bg_black" href="/templates">Templates</a>
-                                </li>
-                </ul>
+            <div class="mobile-only">
+                <img src="/images/menu.svg" class="targetNav" alt="menu bar" />
             </div>
         </div>
         <div class="sorry_message">
             <div class="main_message">
                 <div class="contain">
-                    <img src="../images/homepage/captain-america.png" class="superhero" alt="angry superhero" />
+                    <img src="../images/notifications.svg" class="superhero" alt="angry superhero" />
                     <h3>Okay, this is a little embarrassing</h3>
                     <p>Sorry, we could not display this page on this current Screen Resolution. Please use a device with
                         a
@@ -633,43 +617,53 @@
         </div>
         <footer>
             <div class="contain">
-                <div class="grid_4_first_bias">
+                <div class="grid_4">
                     <div>
-                        <h4>Thumbvids</h4>
-                        <p>I love experimenting and trying out new things. It explains my entire journey into
-                            softwate development. I needed a design for something sometime ago and I came across
-                            Canva. I was wowed by this site that I immediately started researching how to create
-                            something like it. While this is just a small part of Canva's entire product, I have
-                            proven to myself that I can build something cool.</p>
+                        <h3>Hey! How <br /> you ' doing? <ion-icon name="telescope-outline"></ion-icon>
+                        </h3>
+                        <p>If you've made it this far, you have my respect. That probably doesn't mean much to
+                            you right now giving that you are just meeting me but I really appreciate you. My
+                            name
+                            is Adeleke Ife and this is one of my portfolio websites.</p>
                     </div>
                     <div>
-                        <h4>Why Thumbvids?</h4>
+                        <h3>Some of my <br /> other projects</h3>
                         <ul>
-                            <li>Thumbvids for Ecommerce</li>
-                            <li>Thumbvids for Technology</li>
-                            <li>Thumbvids for Sports</li>
-                            <li>Thumbvids for Startups</li>
-                            <li>All Templates</li>
+                            <li><a target="_blank" href="https://konnect.ws">Konnect</a></li>
+                            <li><a target="_blank" href="https://lagostheatreigando.com">Lagos Theatre Igando</a>
+                            </li>
+                            <li><a target="_blank" href="https://vo3designs.com">Vo3 Designs</a></li>
+                            <li><a target="_blank" href="https://dancerapy.org">Dancerapy</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>About Thumbvids</h4>
+                        <h3>Get in <br /> touch with me</h3>
                         <ul>
-                            <li>Who we are</li>
-                            <li>Channels</li>
-                            <li>Engagement</li>
-                            <li>Scale</li>
-                            <li>Watch the Demo</li>
+                            <li><a href="/js/resume.pdf" download="adeleke-ifeoluwase-resume">Download my
+                                    Resume</a></li>
+                            <li><a target="_blank" href="https://adelekeife.com">See my Portfolio</a></li>
+                            <li><a href="tel:+2348132277316">Call me now</a></li>
+                            <li><a href="mailTo:eadelekeife@gmail.com">Send me a mail</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4>Connect with us</h4>
+                    <div class="social_media">
+                        <h3>My Social <br /> Media Links </h3>
+                        <a href="https://twitter.com/eadelekeife" target="_blank">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                        <a href="https://linkedin.com/in/ifeoluwase-adeleke-b3b75323a" target="_blank">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="https://github.com/eadelekeife" target="_blank">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                        <a href="https://medium.com/@eadelekeife" target="_blank">
+                            <ion-icon name="logo-medium"></ion-icon>
+                        </a>
                         <ul>
-                            <li>Who we are</li>
-                            <li>Channels</li>
-                            <li>Engagement</li>
-                            <li>Scale</li>
-                            <li>Watch the Demo</li>
+                            <li><a href="tel:+2348132277316">+234 813 227 7316</a></li>
+                            <li><a href="mailTo:eadelekeife@gmail.com">eadelekeife@gmail.com</a></li>
+                            <!-- <li><a href="">Lagos, Nigeria</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -733,7 +727,37 @@
         data-backdrop="static" data-keyboard="false">
     </button> -->
     <input type="text" value="<%= JSON.stringify(canvas) %>" style="display: none;" id="urlData">
-
+    <div class="nav-content" id="redesigned-nav-content">
+        <ul>
+            <li><a href="/templates">See all Templates</a></li>
+            <li><a target="_blank" href="https://adelekeife.netlify.app">See my Portfolio</a></li>
+            <li><a href="tel:+2348132277316">Call me now</a></li>
+            <li><a href="mailTo:eadelekeife@gmail.com">Send me a mail</a></li>
+            <li><a href="/js/resume.pdf" download="adeleke-ifeoluwase-resume">Download my Resume</a></li>
+        </ul>
+        <img src="/images/homepage/redesign/x.svg" id="redesigned-times" class="times" alt="close menu" />
+        <div class="nav-socials">
+            <a href="https://twitter.com/eadelekeife" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="https://linkedin.com/in/ifeoluwase-adeleke-b3b75323a" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="https://github.com/eadelekeife" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://medium.com/@eadelekeife" target="_blank">
+                <ion-icon name="logo-medium"></ion-icon>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.targetNav').addEventListener('click', () => {
+            document.querySelector('.nav-content').style.display = "block";
+        })
+        document.querySelector('#redesigned-times').addEventListener('click', () => {
+            document.querySelector('#redesigned-nav-content').style.display = "none";
+        })
     </script>
     <script src="../js/image-script.js"></script>
     <script src="../js/colorpicker.js"></script>

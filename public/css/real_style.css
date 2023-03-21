@@ -119,6 +119,8 @@ body, html {
     border: 1px solid #EF3D3D;
     padding: 13px 25px;
     border-radius: 3px;
+    font-size: 13px;
+    font-family: 'Wotfard Regular';
 }
 
 .bg_black {
@@ -1101,7 +1103,8 @@ label {
         height: 70vh;
         display: table;
         padding-bottom: 15%;
-        background: #F9D873;
+        padding-top: 10%;
+        /* background: #F9D873; */
     }
 
     .sorry_message div.main_message {
@@ -1113,6 +1116,7 @@ label {
         line-height: 1.8;
         margin-bottom: 7%;
         display: block;
+        font-size: 14px;
     }
 
     .sorry_message div h3 {
@@ -1132,8 +1136,13 @@ label {
         margin-bottom: 10px;
     }
 
-    .card.alt .navigation {
-        box-shadow: 0 0 3px 3px rgba(0, 0, 0, .3);
+    .sorry.card.alt .navigation {
+        /* box-shadow: 0 0 3px 3px rgba(0, 0, 0, .3); */
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .sorry.card {
+        border: none;
     }
 
     footer {
@@ -1356,6 +1365,7 @@ button.close.modal_button {
         display: flex;
         flex-direction: column-reverse;
     }
+
     footer .grid_4 {
         display: flex;
         flex-direction: column;
@@ -1367,17 +1377,21 @@ button.close.modal_button {
         height: auto;
         margin: unset;
     }
+
     .template-header-display h3 {
         width: 100%;
         font-size: 1.4rem;
     }
+
     .template-header-display p {
         font-size: .9rem;
         width: 100%;
     }
+
     .template-header-display {
         padding-bottom: 30px;
     }
+
     .template-header-display button {
         font-size: .9rem;
     }
@@ -1397,8 +1411,15 @@ button.close.modal_button {
     .modal-body.template_preview .row {
         padding-bottom: 30px;
     }
+
     .navigation .mobile-only img {
         font-size: 4rem;
         height: 2rem;
+    }
+
+    .modal-dialog.modal-xl {
+        position: absolute;
+        bottom: 0px;
+        margin: 0px;
     }
 }
