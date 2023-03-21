@@ -278,14 +278,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 .btn-white, .white {
-  /* padding: 10px 10px; */
-  font-size: 90%;
+  padding: 10px 10px;
+  font-size: 13px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
 }
 
 .first-nav h3, .second-nav h3 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   padding: 0%;
   margin-bottom: 0%;
